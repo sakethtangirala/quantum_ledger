@@ -199,6 +199,79 @@
   </div>
 </section>
 
+<!-- ============================ SANDBOX ============================ -->
+<section id="sandbox">
+  <div class="sandbox-wrap">
+
+    <div class="sandbox-header">
+      <div class="eyebrow">sandbox &nbsp;·&nbsp; live computation</div>
+      <h2 class="scene-title">Try it <span class="glow-q">yourself</span></h2>
+      <p class="lede">Enter your own values — the FastAPI backend computes in real time.</p>
+    </div>
+
+    <div class="sandbox-grid">
+
+      <!-- ── RSA Calculator ── -->
+      <div class="sandbox-panel panel" id="rsa-sandbox">
+        <div class="sp-head">
+          <div class="eyebrow">rsa calculator</div>
+          <span class="sp-badge quantum">POST /api/sandbox/rsa</span>
+        </div>
+        <div class="sp-inputs">
+          <div class="sp-row">
+            <div class="sp-field">
+              <label class="sp-label" for="sb-p">p &mdash; prime</label>
+              <input class="sp-input" type="number" id="sb-p" value="11" min="2" max="997" />
+            </div>
+            <div class="sp-field">
+              <label class="sp-label" for="sb-q">q &mdash; prime</label>
+              <input class="sp-input" type="number" id="sb-q" value="13" min="2" max="997" />
+            </div>
+            <div class="sp-field">
+              <label class="sp-label" for="sb-m">message</label>
+              <input class="sp-input" type="number" id="sb-m" value="42" min="1" />
+            </div>
+          </div>
+          <button class="sp-btn sp-btn-quantum" id="sb-rsa-btn">Compute RSA</button>
+        </div>
+        <div class="sp-error" id="rsa-error"></div>
+        <div class="sp-result" id="rsa-result"></div>
+      </div>
+
+      <!-- ── Merkle Hasher ── -->
+      <div class="sandbox-panel panel" id="merkle-sandbox">
+        <div class="sp-head">
+          <div class="eyebrow">merkle hasher</div>
+          <span class="sp-badge gold">POST /api/sandbox/merkle</span>
+        </div>
+        <div class="sp-inputs">
+          <div class="sp-field">
+            <label class="sp-label" for="sb-tx0">TX-0</label>
+            <input class="sp-input sp-tx" type="text" id="sb-tx0" value="alice &#x2192; bob   &#x26D3; 4.20" />
+          </div>
+          <div class="sp-field">
+            <label class="sp-label" for="sb-tx1">TX-1</label>
+            <input class="sp-input sp-tx" type="text" id="sb-tx1" value="bob &#x2192; carol   &#x26D3; 1.15" />
+          </div>
+          <div class="sp-field">
+            <label class="sp-label" for="sb-tx2">TX-2</label>
+            <input class="sp-input sp-tx" type="text" id="sb-tx2" value="carol &#x2192; dave  &#x26D3; 9.07" />
+          </div>
+          <div class="sp-field">
+            <label class="sp-label" for="sb-tx3">TX-3</label>
+            <input class="sp-input sp-tx" type="text" id="sb-tx3" value="dave &#x2192; erin   &#x26D3; 0.33" />
+          </div>
+          <button class="sp-btn sp-btn-gold" id="sb-merkle-btn">Hash Tree</button>
+        </div>
+        <div class="sp-error" id="merkle-error"></div>
+        <div class="sp-result" id="merkle-result"></div>
+      </div>
+
+    </div><!-- /sandbox-grid -->
+
+  </div><!-- /sandbox-wrap -->
+</section>
+
 <!-- ============================ GSAP + plugins ============================ -->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
@@ -216,6 +289,8 @@
 <script src="js/outro.js"></script>
 <!-- orchestrator -->
 <script src="js/main.js"></script>
+<!-- sandbox (after main so QL util is available) -->
+<script src="js/sandbox.js"></script>
 
 </body>
 </html>

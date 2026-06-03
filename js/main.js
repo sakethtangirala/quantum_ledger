@@ -16,10 +16,15 @@
     ['outro',  '05', 'the verdict'],
   ];
 
-  function boot() {
+  async function boot() {
     if (window.__qlBooted) return;
-    window.__qlBooted = true;
+    window.__qlBooted = true;   // set synchronously — guards against double-boot
     window.__qlErrors = [];
+
+    // Wait for the backend fetch to resolve (or silently fall back to static data)
+    if (window.QL_DATA_PROMISE) {
+      try { await window.QL_DATA_PROMISE; } catch (_) {}
+    }
     const run = (name, fn) => { try { fn(gsap, ScrollTrigger); } catch (e) { window.__qlErrors.push(name + ': ' + e.message + ' | ' + (e.stack || '').split('\n')[1]); console.error(name, e); } };
     run('hero', QL_hero);
     run('rsa', QL_rsa);
