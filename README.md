@@ -10,6 +10,7 @@ prerequisites
 
 step 1: virtual environment and dependencies
 * python -m venv .venv
+* Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 * .venv\Scripts\activate
 - confirm a (env) next to your C:/Users/...
 * pip install -r requirements.txt
