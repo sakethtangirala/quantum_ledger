@@ -21,6 +21,7 @@ step 2: running the backend
 
 step 3: running the frontend
 - open a second cmd tab
+- confirm a (env) next to your C:/Users/...
 * python -m http.server 5500 
 * navigate to port 5500 through the browser or click the link below.
 - http://localhost:5500
