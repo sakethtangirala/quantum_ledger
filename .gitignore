@@ -1,37 +1,24 @@
-# Python
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
 .Python
-
-# Virtual environments
 env/
 venv/
 .venv/
 ENV/
-
-# pytest / test cache
 .pytest_cache/
 .coverage
 htmlcov/
-
-# Distribution / packaging
 dist/
 build/
 *.egg-info/
-
-# Editors & OS
 .DS_Store
 Thumbs.db
 *.swp
 *.swo
 .idea/
 .vscode/
-
-# Claude Code session files
 .claude/
-
-# Misc project artifacts
 _shots/
 .sixth/
